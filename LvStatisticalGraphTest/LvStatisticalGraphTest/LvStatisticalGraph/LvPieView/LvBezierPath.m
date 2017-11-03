@@ -36,7 +36,7 @@
     {
         a=M_PI*2-asinf((self.myCenter.y-point.y)/distance);
     }
-//    a=a+self.startAngle;
+
     if (distance<self.myRadius+self.myLineWidth/2&&distance>self.myRadius-self.myLineWidth/2)
     {
         if (a>self.myStartAngle&&a<self.myEndAngle)

@@ -28,7 +28,7 @@
     self.navigationController.navigationBar.hidden=YES;
     
     NSMutableArray *arrValue=[NSMutableArray arrayWithCapacity:0];//数值
-    NSMutableArray *arrText=[NSMutableArray arrayWithCapacity:0];//数值
+    NSMutableArray *arrText=[NSMutableArray arrayWithCapacity:0];//说明
     NSMutableArray *arrPieValue=[NSMutableArray arrayWithCapacity:0];//数值
     NSMutableArray *arrTime=[NSMutableArray arrayWithCapacity:0];//时间
     NSMutableArray *arrLinesColors=[NSMutableArray arrayWithCapacity:0];//曲线颜色
@@ -40,7 +40,7 @@
     NSMutableArray *arrPointValueFontColor=[NSMutableArray arrayWithCapacity:0];//曲线顶点数值字体颜色
     
     
-    for (NSInteger j=0; j<5; j++)
+    for (NSInteger j=0; j<4; j++)
     {
         NSMutableArray *arrValue1=[NSMutableArray arrayWithCapacity:0];
         for (NSInteger i=0; i<50; i++)
@@ -61,13 +61,14 @@
     }
     
     
-    CGRect rect=CGRectMake(10, 30, SIZE.width-20, 250);
+    //曲线图，折线图
+    CGRect rect=CGRectMake(10, 60, SIZE.width-20, 250);
     
     
-    NSArray *arrLineWidth=@[@"1",@"3"];
+    NSArray *arrLineWidth=@[@"0.5",@"1"];
     
     LvCurvesView *curves=[[LvCurvesView alloc]initWithArrSell:arrValue arrTime:arrTime frame:rect lineColor:arrLinesColors lineWidth:arrLineWidth bgColor:arrBgColor];
-    //    curves.backgroundColor=[UIColor colorWithWhite:0.851 alpha:1.000];
+    curves.backgroundColor=[[UIColor blueColor] colorWithAlphaComponent:0.1];
     curves.delegate=self;
     //曲线定点设置
     curves.arrPointWidth=arrPointWidth;
@@ -108,9 +109,10 @@
     //    curves.isHiddenPointValue=YES;
     
     [self.view addSubview:curves];
-    curves.backgroundColor=[[UIColor blueColor] colorWithAlphaComponent:0.1];
     
     
+    
+    //饼状图
     _showPie=[[LvPieView alloc]initWithFrame:CGRectMake(0, 0, 200, 200) arrText:arrText arrValue:arrPieValue arrColor:arrPointBgColor];
     _showPie.center=CGPointMake(SIZE.width/2, SIZE.height-150);
     _showPie.pieLineWidth=40;

@@ -44,12 +44,6 @@
         
         if (!arrBgColor)
         {
-//            NSMutableArray *arrBgColor=[NSMutableArray arrayWithCapacity:0];
-//            [arrSell enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-//                [arrBgColor addObject:@[[UIColor clearColor]]];
-//            }];
-//            self.arrBgColor=arrBgColor;
-            
             self.isHiddenFillView=NO;
         }
         else
@@ -94,28 +88,7 @@
 }
 
 
-//-(void)setCoordinateYOver:(CGFloat)coordinateYOver
-//{
-//    if (coordinateYOver<=0)
-//    {
-//        _coordinateYOver=0.5*self.frame.size.height/(self.rowNumber+1);
-//    }
-//    else
-//    {
-//        _coordinateYOver=coordinateYOver;
-//    }
-//}
 
--(void)tapClick:(UITapGestureRecognizer *)tap
-{
-//    if (tap.state==UIGestureRecognizerStateEnded)
-//    {
-//        if ([self.delegate respondsToSelector:@selector(LvCurvesFill:clickFill:)])
-//        {
-//            [self.delegate LvCurvesFill:(LvCurvesFill *)tap.view clickFill:tap.view.tag-10000];
-//        }
-//    }
-}
 
 -(void)drawRect:(CGRect)rect
 {
@@ -144,8 +117,6 @@
             _curvesFill.tag=10000+idx;
             [self insertSubview:_curvesFill atIndex:idx];
             
-//            UITapGestureRecognizer *tap=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapClick:)];
-//            [_curvesFill addGestureRecognizer:tap];
         }];
     }
 
@@ -263,7 +234,7 @@
     [self.arrBtnPoint enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         UIButton *btn=obj;
         btn.hidden=YES;
-        NSLog(@"btn.tag=%zd idx=%zd",btn.tag,index);
+   
         if (btn.tag==(10000+index)||btn.tag==(20000+index))
         {
              btn.hidden=NO;

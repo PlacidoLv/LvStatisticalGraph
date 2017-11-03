@@ -78,9 +78,6 @@
 
 -(void)drawRect:(CGRect)rect
 {
-    NSLog(@"drawRect");
-    
-
     __block CGFloat sum= [[self.arrValue valueForKeyPath:@"@sum.floatValue"] floatValue];
     __block CGFloat sumStart=0;
     [_arrBezier removeAllObjects];

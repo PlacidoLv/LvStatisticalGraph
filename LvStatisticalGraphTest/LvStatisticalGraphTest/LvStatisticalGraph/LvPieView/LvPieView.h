@@ -23,8 +23,9 @@
 @property(nonatomic,retain)NSMutableArray *arrValue;
 @property(nonatomic,retain)NSMutableArray *arrText;
 @property(nonatomic,retain)NSMutableArray *arrColor;
+
 @property(nonatomic,assign)CGFloat selectIndex;
-@property(nonatomic,assign)CGFloat selectDistance;
+@property(nonatomic,assign)CGFloat selectDistance;//
 @property(nonatomic,retain)UIColor *selectColor;
 
 @property(nonatomic,retain)UILabel *labText;
